@@ -29,7 +29,7 @@ class PollModel {
             {
                 const query = `INSERT INTO options (poll_id, text) VALUES (?,?)`;
                 const value = [poll_id, options[i]];
-                [option,fields] = await connection.query(query, value);
+                [option,fields] = await connection.query(query, value); 
             }
             return option;
         }catch(error){

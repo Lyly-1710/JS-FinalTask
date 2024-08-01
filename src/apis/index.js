@@ -10,4 +10,4 @@ router.use('/auth', authRoute);
 router.use('/poll', pollRoute);
 router.use('/poll/opt', pollRoute);
 
-export default router;
+export default router;  

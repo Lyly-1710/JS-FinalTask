@@ -38,7 +38,8 @@ class PollsController {
 
     async createPoll(req, res, next){
         try{
-            const newPoll = await pollsService.createPoll( req.user.id, req.body.title, req.body.option);
+            const options = req.body.option.split(';')
+            const newPoll = await pollsService.createPoll( req.user.id, req.body.title, options);
             return res.status(200).json({
                 success: true,
                 data: newPoll,

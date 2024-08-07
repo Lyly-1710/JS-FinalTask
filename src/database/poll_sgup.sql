@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `options` (
-  `option_id` int(11) NOT NULL,
+  `option_id` int(11) NOT NULL AUTO_INCREMENT,
   `poll_id` int(11) NOT NULL,
   `text` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -50,7 +50,7 @@ INSERT INTO `options` (`option_id`, `poll_id`, `text`) VALUES
 --
 
 CREATE TABLE `poll` (
-  `poll_id` int(11) NOT NULL,
+  `poll_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `vote_id` int(11) DEFAULT NULL,
   `title` varchar(50) DEFAULT NULL
@@ -70,7 +70,7 @@ INSERT INTO `poll` (`poll_id`, `user_id`, `vote_id`, `title`) VALUES
 --
 
 CREATE TABLE `users` (
-  `user_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(50) DEFAULT NULL,
   `username` varchar(50) DEFAULT NULL,
   `hashedPassword` varchar(500) DEFAULT NULL
@@ -91,7 +91,7 @@ INSERT INTO `users` (`user_id`, `email`, `username`, `hashedPassword`) VALUES
 --
 
 CREATE TABLE `vote` (
-  `vote_id` int(11) NOT NULL,
+  `vote_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `option_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
